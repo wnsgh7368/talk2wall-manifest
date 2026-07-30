@@ -1,0 +1,43 @@
+replicaCount: 3
+revisionHistoryLimit: 3
+strategy:
+  maxUnavailable: 1
+  maxSurge: 1
+
+matchLabels:
+  app: spring
+  component: backend
+  env: prod
+
+metadata:
+  labels:
+    app: spring
+    component: backend
+    env: prod
+
+image:
+  repository: wnsgh7368/talk2wall-be
+  version: 0.1.5
+
+ports:
+  name: http
+  containerPort: 8080
+
+startupProbe:
+  path: /health
+  periodSeconds: 5
+  failureThreshold: 10
+  timeoutSeconds: 3
+
+readinessProbe:
+  path: /health
+  periodSeconds: 5
+  failureThreshold: 3
+  successThreshold: 3
+  timeoutSeconds: 3
+
+livenessProbe:
+  path: /health
+  periodSeconds: 5
+  failureThreshold: 3
+  timeoutSeconds: 3
