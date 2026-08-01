@@ -16,7 +16,7 @@ metadata:
     env: prod
 
 image:
-  repository: wnsgh7368/talk2wall-be
+  repository: 474668428016.dkr.ecr.ap-northeast-2.amazonaws.com/talk2wall-be
   version: 0.1.5
 
 ports:
