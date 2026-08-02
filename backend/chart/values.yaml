@@ -14,7 +14,7 @@ metadata:
     env: prod
 image:
   repository: 474668428016.dkr.ecr.ap-northeast-2.amazonaws.com/talk2wall/be
-  version: 816550dd48977876088d213b6fbcef5160776f84
+  version: 53cfe33ae67b582c1846ed9e12ecd3e16067b3d1
 ports:
   name: http
   containerPort: 8080
