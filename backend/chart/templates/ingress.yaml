@@ -4,21 +4,20 @@ metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - { { .Values.ingress.host } }
-      secretName: { { .Release.Name } }-tls
+        - {{ .Values.ingress.host }}
+      secretName: {{ .Release.Name }}-tls
   rules:
-    - host: {{ .Values.ingress.host }}
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Release.Name }}-be-service
-                port:
-                  number: 80
+      - host: {{ .Values.ingress.host }}
+        http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: {{ .Release.Name }}-be-service
+                  port:
+                    number: 80
