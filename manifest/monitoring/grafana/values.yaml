@@ -1,0 +1,28 @@
+adminPassword: "1234"
+
+persistence:
+  enabled: false
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  hosts:
+    - grafana.talk2wall.com
+  tls:
+    - secretName: grafana-tls
+      hosts:
+        - grafana.talk2wall.com
+
+resources:
+  requests:
+    memory: 128Mi
+    cpu: 50m
+  limits:
+    memory: 256Mi
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources: []
