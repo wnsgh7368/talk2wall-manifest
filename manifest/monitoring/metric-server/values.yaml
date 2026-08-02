@@ -1,0 +1,9 @@
+args:
+  - --kubelet-insecure-tls
+
+resources:
+  requests:
+    memory: 64Mi
+    cpu: 20m
+  limits:
+    memory: 128Mi
