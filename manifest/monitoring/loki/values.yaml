@@ -28,6 +28,9 @@ singleBinary:
   replicas: 1
   persistence:
     enabled: false
+  extraVolumeMounts:
+    - name: data
+      mountPath: /var/loki
   resources:
     requests:
       memory: 256Mi
