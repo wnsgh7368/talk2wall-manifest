@@ -3,44 +3,36 @@ revisionHistoryLimit: 3
 strategy:
   maxUnavailable: 1
   maxSurge: 1
-
 matchLabels:
   app: spring
   component: backend
   env: prod
-
 metadata:
   labels:
     app: spring
     component: backend
     env: prod
-
 image:
   repository: 474668428016.dkr.ecr.ap-northeast-2.amazonaws.com/talk2wall-be
-  version: 0.1.5
-
+  version: 816550dd48977876088d213b6fbcef5160776f84
 ports:
   name: http
   containerPort: 8080
-
 startupProbe:
   path: /health
   periodSeconds: 5
   failureThreshold: 10
   timeoutSeconds: 3
-
 readinessProbe:
   path: /health
   periodSeconds: 5
   failureThreshold: 3
   successThreshold: 3
   timeoutSeconds: 3
-
 livenessProbe:
   path: /health
   periodSeconds: 5
   failureThreshold: 3
   timeoutSeconds: 3
-
 ingress:
   host: api.talk2wall.com
