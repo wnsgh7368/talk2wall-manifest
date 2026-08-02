@@ -13,7 +13,7 @@ metadata:
     component: backend
     env: prod
 image:
-  repository: 474668428016.dkr.ecr.ap-northeast-2.amazonaws.com/talk2wall-be
+  repository: 474668428016.dkr.ecr.ap-northeast-2.amazonaws.com/talk2wall/be
   version: 816550dd48977876088d213b6fbcef5160776f84
 ports:
   name: http
